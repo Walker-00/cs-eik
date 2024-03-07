@@ -89,6 +89,11 @@ Turing Completeness Theorem ကြောင်းပါ။ ဒါပေမဲ့
 တိုးတက်လာမဲ့ ခေတ်ကြီးကို ကြည့်မသွားခဲ့ရရှာပါဘူး။ Alan Turing ကို 1952 မှာ UK ရဲ့ အစိုးရကနေ Gay ဖြစ်တဲ့အတွက်
 ဟော်မုန်းဆေးတွေအတင်းသောက်ခိုင်းခဲ့ရာကနေ 1954 မှာ သူ့ကိုယ်သူ အဆုံးစီရင်ခဲ့ပါတယ်။
 
+#figure(
+  image("images/turing_machine.jpg", width: 70%),
+  caption: [Turing Machine ပုံ],
+)
+
 #pagebreak()
 #align(center, [= Computer Hardware များအကြောင်း])
 
