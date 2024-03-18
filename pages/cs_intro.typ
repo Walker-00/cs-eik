@@ -212,3 +212,25 @@ Trillion တွေနဲ့ချီပြီး Memory Cell တွေနဲ့ 
 rw(read/write) speed မှာကျ 30~50 microseconds လောက်ကြာပါတယ်။ ဒါပေမဲ့ Ram ကကျ 2D array ပုံစံ
 Billion နဲ့ ချီတဲ့ Memory Cell တွေနဲ့ဖြစ်တာကြောင့် Gb နည်းနည်းလောက်ပဲ ထည့်ထားနိုင်ပေမဲ့ rw speed မှာကျ 1
 nanosecond ပဲကြာပါတယ်။ အဆပေါင်း 3000 တောင်ကွာပါတယ်။ ဒါကြောင့် RAM ကိုပဲသုံးတာပါ။
+
+== Storage Devices
+Storage Device တွေက Data တွေကို အချိန်အကြာကြီး သိမ်းထားတဲ့နေရာမှာသုံးပါတယ်။ Storage Device တွေအများကြီး
+ရှိပါတယ်။ ဥပမာဆိုရင် Floppy Disk တို့ USB တို့ ကျွန်တော်တို့ အရင်က ဇာတ်ကားခွေတွေထည့်တဲ့ CD ပြားတို့ HDD တို့ SSD
+(Solid State Drive) တို့ပါ။၊ သူတို့တွေထဲက အကုန်လုံးလိုလို က လုပ်ဆောင်ပုခြင်းတူကြပါတယ်။ 1, 0 Data တွေကို electron
+charge တွေအနေနဲ့ Array ပုံစံ သိမ်းပေးပြီး ပြန်ထုတ်ပေးပါတယ်။ SDD မှာဆို အဲ့လိုသိမ်းပေးတဲ့ Memory cell ကို Charge
+Trap Flash လို့ခေါ်ပါတယ်။ (ကျွန်တော် ပိုပြီးအသေးစိတ် Data တွေဘယ်လို Memory cell ထဲမှာသိမ်းလည်း။
+သူတို့ဘယ်လိုအလုပ်လုပ်လဲဆိုတာကတော့ ဒီ edition မှာ အချိန်မမှီရင် နောက် edition မှထည့်ပေးပါမယ်။)
+
+== BIOS(Basic Input Output System)
+သူက Motherboard မှာ တစ်ခါတည်းပါလာတတ်ပါတယ်။ သူက Hardware လည်းဟုတ်တယ်လို့ပြောရသလို။ Software
+လည်းဟုတ်ပါတယ်။ အများစုကတော့ MotherBoard ရဲ့ Firmware(Hardware တစ်ခုခုကို တိုက်ရိုက်ထိန်းချုပ်ပေးတဲ့ Software)
+လို့လည်းခေါ်ပါတယ်။ သူရဲ့ အဓိကအလုပ်ကတော့ CMOS ထဲက သိမ်းထားတဲ့ Hardware Setting တွေကို ထိန်းချုပ်ပေးပြီး Bootable
+Drive(Operating System ဒါမှမဟုတ် Bootloader တို့လို Software ထည့်ထားတဲ့ boot လုပ်လို့ရတဲ့ Device) ကို
+စတင် run ပေးရပါတယ်။ သူက နှေးတာရယ် Storage များတာတွေကို Handle မလုပ်နိုင်တာရယ်ကြောင့် နောက်ပိုင်း PC တွေမှာ
+UEFI ကိုသုံးလာကြပါတယ်။ UEFI က BIOS လိုပါပဲ ဒါပေမဲ့ ပိုမြန်တဲ့အပြင် Exabytes (1 exa = 1073741824 GB,
+1073741 TB) နဲ့ချီတဲ့ partition ပေါင်း 128 ခုကို Handle နိုင်ပါတယ်။ BIOS ကကျ တော့ အများဆုံး 2.2 TB
+Storage နဲ့ partition 4 ခုကိုပဲ Handle လုပ်ပေးနိုင်ပါတယ်။
+
+#pagebreak()
+
+#align(center, [= System Software များအကြောင်း])
