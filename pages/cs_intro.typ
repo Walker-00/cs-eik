@@ -1,5 +1,6 @@
 #import "structure.typ": *
 
+#show link: underline
 #show: text_style
 #align(center, [= Computer Science မိတ်ဆက်])
 \
@@ -229,8 +230,63 @@ Drive(Operating System ဒါမှမဟုတ် Bootloader တို့လိ
 စတင် run ပေးရပါတယ်။ သူက နှေးတာရယ် Storage များတာတွေကို Handle မလုပ်နိုင်တာရယ်ကြောင့် နောက်ပိုင်း PC တွေမှာ
 UEFI ကိုသုံးလာကြပါတယ်။ UEFI က BIOS လိုပါပဲ ဒါပေမဲ့ ပိုမြန်တဲ့အပြင် Exabytes (1 exa = 1073741824 GB,
 1073741 TB) နဲ့ချီတဲ့ partition ပေါင်း 128 ခုကို Handle နိုင်ပါတယ်။ BIOS ကကျ တော့ အများဆုံး 2.2 TB
-Storage နဲ့ partition 4 ခုကိုပဲ Handle လုပ်ပေးနိုင်ပါတယ်။
+Storage နဲ့ partition 4 ခုကိုပဲ Handle လုပ်ပေးနိုင်ပါတယ်။ BIOS တွေက ဘာမှ မလုပ်ခင် Bootable Device
+တွေကို မစတင်ပေးခင်မှာ Power On Self Test(POST) လို့ခေါ်တဲ့ Test ကို run ပြီး Computer နဲ့ချိတ်ထားတဲ့
+Keyboard တွေ Battery တွေ Display တွေအလုပ်လုပ်လားစစ်ပေးပါတယ်။ အကယ်၍ အလုပ်မလုပ်တာတို့ လဲသင့်တာတို့ဆိုရင် Aleart
+Screen သဘောမျိုးပြပေးပါတယ်။ ကျွန်တော်တို့ Computer အဟောင်းတွေ Bettery မကောင်းတာတွေကိုင်ဖူးရင် သတိထားမိမှာပါ။
+Power ဖွင့်လိုက်ချင်း Boot တက်မသွားပဲ Your Bettery health is blabla ဆိုပြီး Aleart ပြပါတယ်။ သူက
+MotherBoard အပေါ်လိုက်ပြီး version တွေကွဲနိုင်ပါတယ်။ သူက MotherBoard တစ်ခုဆို တစ်ခုတည်းအတွက်ပဲအလုပ်လုပ်ပြီး
+တစ်ခြား အမျိုးအစားတွေအတွက်အလုပ်မလုပ်ပါဘူး။ ဒါကြောင့် General ဖြစ်တဲ့ BIOS ဆိုတာလုံးဝကို မဖြစ်နိုင်သလောက်ကိုဖြစ်ပါတယ်။
 
 #pagebreak()
 
 #align(center, [= System Software များအကြောင်း])
+
+== မိတ်ဆက်
+System Software ဆိုတာကတော့ Hardware ကို တိုက်ရိုက် control လုပ်ပေးတဲ့ Software တွေပါ။ ကျွန်တော်တို့ သုံးနေကျ
+Discord တို့လို Facebook တို့လို Code တွေနဲ့ ရေးထားတာပါပဲ ဒါပေမဲ့ သူတို့က Hardware တွေကို တိုက်ရိုက်ထိန်းချုပ်ပေးပြီး အဲ့ဒီ
+Facebook တို့ Discord တို့လို User Software တွေ Hardware ကိုသုံးဖို့အတွက် API ပြန်ထုတ်ပေးရပါတယ်။ သူ့မှာ
+အဓိကအားဖြင့်တော့ BIOS, Bootloader, Kernel, Kernel Drivers & Modules တွေပါဝင်ပါတယ်။ BIOS
+အကြောင်းကိုတော့ ကျွန်တော်တို့ ရှင်းပြပြီးပါပြီ။ ကျန်တာတွေကို ဆက်ရှင်းပြပေးပါမယ်။
+
+== Bootloader
+Bootloader ဆိုတာ BIOS ပြီးရင် ဒုတိယ run ပေးတဲ့ Software ပါ BIOS ကနေ POST run ပြီးရင်
+Bootloader ရှိတဲ့ MBR ဆိုတဲ့ partition မှာ သွားရှာပြီး run ပေးရပါတယ်။ ဒါပေမဲ့ UEFI မှာတော့ Bootloader
+file ထည့်ဖို့ partition သက်သက်ဆောက်ပေးရပါတယ်။ သူကနေမှ Operating System တွေရဲ့ Kernel File တွေရှိတဲ့
+Drive Location ကို ရှာပေးပြီး User ကြိုက်တဲ့ OS ကို boot နိုင်အောင်ပြပေးရပါတယ်။ သူက Physical Memory ကိုလဲ
+Map လုပ်ပေးရပြီး Virtual Memory address တွေပြန်ထုတ်ပေးရပါတယ်။ user ကြိုက်တဲ့ Os ကိုရွေးပြီး သွားပြီဆိုရင် အဲ့ OS
+နဲ့ဆိုင်တဲ့ Kernel code file ကို Memory ထဲမှာ run ပေးပြီး Map လုပ်ထားတဲ့ Memory တွေကို control
+လုပ်ဖို့ပေးလိုက်ရပါတယ်။ bootloader code ကို ကြည့်ချင်ရင် ကျွန်တော့ #link("https://github.com/Walker-00/chaos/tree/rust/bootloader")[Github Repo] မှာ
+ကြည့်ကြည့်လို့ရပါတယ်။
+
+== Operating System (OS)
+ပထမဆုံးအနေနဲ့ကတော့ OS ဆိုတာ Operating System ပါ Online Shop မဟုတ်ပါဘူး။ သူက BIOS ကလွဲလို့ System
+Software တွေအကုန်လုံး စုပေါင်းပြီး User Software တွေအတွက် Syscall လို Api တွေပြန်ထုတ်ပေးဖို့လိုတဲ့ အရာတွေအကုန်
+ပေါင်းပြီး OS လို့ခေါ်ပါတယ်။ သူ့မှာ အဓိကပါတာကတော့ Kernel, Kernel Driver တွေ Kernel Modules တွေ
+Bootloader တို့ပါပါတယ်။ OS တွေအများကြီးရှိပါတယ်။ ကိုယ်တိုင်လုပ်ချင်ရင်တောင်အရမ်းကြီးမခတ်ပဲလုပ်ရပါတယ်။ ကျွန်တော် ဒီထဲမှာ
+တစ်ခုရေးပြဖို့လည်းရှိပါတယ်။ နောက် edition ကျရင်ပေါ့။ အဲ့ထဲကမှ နာမည်ကြီးတဲ့ တစ်ချို့ OS တွေက Windows, Mac,
+Gnu/Linux, BSD, RTOS တို့လိုကောင်မျိုးတွေပါ။ User Software တွေက Os တစ်ခုနဲ့ တစ်ခုမှာ ကွဲပါတယ်။ Windows
+User Software (.exe file, ex. Discord.exe Windows file) တွေကို Gnu/Linux တို့ Mac တို့မှာ
+Native run မရပါဘူး။ ဘာလို့လဲဆိုတော့ Os တစ်ခုနဲ့တစ်ခု Hardware တွေ Handle လုပ်ပုံခြင်း Program File
+Header တွေ Syscall Api တွေထုတ်ပေးပုံခြင်းမတူလို့ပါ။ ရှင်းရှင်းပြောရရင် OS တစ်ခုနဲ့ တစ်ခု အကုန်လုံးလိုလိုကွဲပါတယ်။
+
+== Kernel
+Kernel ဆိုတာကတော့ Software ရဲ့ CPU သဘောပါပဲ သူမပါပဲ ဘယ် program မှ run လို့မရဘူးလို့ကိုပြောရပါတယ်။
+ဘာလို့လဲဆိုတော့ သူကနေမှ Hardware တွေကို Software တွေသုံးလို့ရအောင် Map လုပ်ပြီး API တွေပြန် ပေးရတာပါ။ ကိုယ်တိုင် လိုတဲ့
+Hardware Driver တွေ Memory Map လုပ်တာတွေကို မလုပ်တတ်ရင်တော့ Kernel မပါပဲ ဘာ Software မှရေးမရပါဘူး။
+သူက ပထမဆုံး ဘာမှမလုပ်ခင် Device တွေကို စစ်ပြီး လိုအပ်တဲ့ Device Driver တွေ Kernel Modules တွေကို
+စတင်ပေးပါတယ်။ ဥပမာ Display အတွက် VGA Driver တို့ GPU Driver တို့နဲ့ Binder Modules တို့လိုပါ။ ဒါတွေကို
+စပေးပြီးပြီးဆိုရင်တော့ သူက Systemd တို့ Openrc တို့လို Init process ကိုစတင်ပေးပါတယ်။ သူက ဘာလုပ်ပေးရတာလဲဆိုတော့
+အများကြီးပါပဲ User Config လုပ်ထားတဲ့ Background process တို့နဲ့ လိုအပ်တဲ့ Wifi တို့ Bluetooth တို့လို
+Service တွေကို စတင်ပေး ရပါတယ်။ အဲ့ဒါအပြင် မတူတဲ့ File System တွေတို့ Disk တို့ကို သုံးလိုရအောင်လုပ်ပေးရပါတယ်။
+နောက်ပြီး User Login ဝင်တာတို့ကိုလည်း Handle လုပ်ပေးရပါတယ်။ အရှင်းဆုံးမှတ်ထားရရင်တော့ Init System တွေက
+Kernel က လိုတဲ့ Driver တွေ Module တွေစတင်ပေးပြီးရင် ကျန်တဲ့ စပေးဖို့ လိုအပ်တဲ့ဟာတွေကို စပေးတဲ့ဟာလို့မှတ်ထားလို့ရပါတယ်။
+Kernel ရဲ့ အလုပ်ကအဲ့မှာတင်ပြီး သွားတာမဟုတ်ပဲ အများကြီးကျန်ပါသေးတယ်။ သူက ကျွန်တော်တို့ User Software တွေ Hardware
+ကိုသုံးဖို့ Api တွေပြန်ထုတ်ပေးရပါတယ်။ အဲ့ Program run လိုက်တဲ့အချိန်မှာလဲ သူရဲ့ Header က မှန်ရဲ့လား ဘယ် Syscall
+တွေသုံးထားလဲ။ ဘယ် Syscall ဆို ဘယ် Driver ကိုသုံးရမှာလဲ။ Thread တွေထပ်ထုတ်ပေးရမလား ဒီ Data တွေကို ဘယ် Memory
+Address မှာ သွားသိမ်းပေးရမလဲ ဒီလို အောက်ခြေသိမ်း အလုပ်တွေအကုန် သူမှာတာဝန်ရှိပါတယ်။ Kernel
+မှာအမျိုးအစားတွေရှိပါသေးတယ်။ အဲ့ဒီလို အသေးစိတ်တွေကိုတော့ နောက် edition မှာထည့်ပေးပါမယ်။ အရမ်း Simple ဖြစ်တဲ့ Rust နဲ့
+ရေးထားတဲ့ Kernel နဲ့ VGA Device Driver ကို ကျွန်တော့ရဲ့ #link("https://github.com/Walker-00/chaos/tree/rust/src")[Github Repo] မှာ
+ကြည့်ကြည့်လို့ရပါတယ်။
+
+== Device Driver
