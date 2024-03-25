@@ -284,9 +284,72 @@ Kernel က လိုတဲ့ Driver တွေ Module တွေစတင်ပ�
 Kernel ရဲ့ အလုပ်ကအဲ့မှာတင်ပြီး သွားတာမဟုတ်ပဲ အများကြီးကျန်ပါသေးတယ်။ သူက ကျွန်တော်တို့ User Software တွေ Hardware
 ကိုသုံးဖို့ Api တွေပြန်ထုတ်ပေးရပါတယ်။ အဲ့ Program run လိုက်တဲ့အချိန်မှာလဲ သူရဲ့ Header က မှန်ရဲ့လား ဘယ် Syscall
 တွေသုံးထားလဲ။ ဘယ် Syscall ဆို ဘယ် Driver ကိုသုံးရမှာလဲ။ Thread တွေထပ်ထုတ်ပေးရမလား ဒီ Data တွေကို ဘယ် Memory
-Address မှာ သွားသိမ်းပေးရမလဲ ဒီလို အောက်ခြေသိမ်း အလုပ်တွေအကုန် သူမှာတာဝန်ရှိပါတယ်။ Kernel
-မှာအမျိုးအစားတွေရှိပါသေးတယ်။ အဲ့ဒီလို အသေးစိတ်တွေကိုတော့ နောက် edition မှာထည့်ပေးပါမယ်။ အရမ်း Simple ဖြစ်တဲ့ Rust နဲ့
-ရေးထားတဲ့ Kernel နဲ့ VGA Device Driver ကို ကျွန်တော့ရဲ့ #link("https://github.com/Walker-00/chaos/tree/rust/src")[Github Repo] မှာ
+Address မှာ သွားသိမ်းပေးရမလဲ ဒီလို အောက်ခြေသိမ်း အလုပ်တွေအကုန် သူမှာတာဝန်ရှိပါတယ်။ Kernel မှာ Monolithic
+Kernel, MicroKernel နဲ့ တစ်ခြားအမျိုးအစားတွေရှိပါသေးတယ်။ သူတို့အပေါ်မူတည်ပြီး Kernel က ဘယ်နေရာမှာကောင်းတယ်။
+ဘယ်လို handle လုပ်တယ်။ ဒါတွေကွဲပါသေးတယ်။ အဲ့ဒီလို အသေးစိတ်တွေကိုတော့ နောက် edition မှာထည့်ပေးပါမယ်။ အရမ်း Simple
+ဖြစ်တဲ့ Rust နဲ့ ရေးထားတဲ့ Kernel နဲ့ VGA Device Driver ကို ကျွန်တော့ရဲ့ #link("https://github.com/Walker-00/chaos/tree/rust/src")[Github Repo] မှာ
 ကြည့်ကြည့်လို့ရပါတယ်။
 
 == Device Driver
+Device Driver လို့လဲခေါ်တဲ့ Kernel Driver တွေကို Kernel က Hardware တွေကို handle လုပ်ဖို့ အတွက်သုံးပါတယ်။
+သူတို့တွေက Kernel အပေါ်မူတည်ပြီး ပါတဲ့ပုံနဲ့ လုပ်ဆောင်ပုံတွေကွာပါတယ်။ ဥပမာ Linux တို့လို Monolithic Kernel
+မျိုးမှာဆိုရင် Kernel Driver တွေက Kernel code ထဲမှာ Kernel ထဲမှာ တစ်ခါတည်းပါပြီးသားပါ manual လဲ
+install လို့ရပါတယ် ။ ဒါ့အတွက်ကြောင့် Linux ကအရမ်းမြန်ပါတယ်။ ဒါပေမဲ့ Windows တို့လို MicroKernel တွေမှာတော့
+တစ်ခါတည်းမပါပဲ ကိုယ်တိုင် install ရပါတယ်။ သူတို့တွေက Kernel ပြီးရင် အရမ်းအရေးပါတဲ့ System Software
+တွေဖြစ်ပါတယ်။ သူတို့မပါရင် ဘယ် Hardware ကိုမှ သုံးလို့ရမှာမဟုတ်ပါဘူး။ တစ်ခါတစ်လေမှာ ကိုယ် Graphic card
+ပြောင်းလိုက်တာတို့ ကိုယ့် Pc ထဲကနေ တစ်ခုခုပြောင်းလိုက်တာတို့ဆိုရင် Windows မှာချက်ချင်းသုံးမရပဲ Linux မှာကျ
+ရနေတာတွေရှိပါလိမ့်မယ်။ အဲ့တာ သူတို့ မတူတဲ့ Kernel နှစ်ခု ကြောင့်ပါ စောနကပြောသလို Windows မှာ Device တစ်ခုခုပြောင်းလိုက်လို့
+မရရင် အဲ့တာ Driver မရှိလို့ပါ။ Linux မှာကျ လိုတဲ့ Driver တွေအကုန်ပါပြီး သားဆိုတော့ ချက်ချင်းရပါတယ်။ FOSS
+(Free And Open Source Software) မဟုတ်တဲ့ Driver တစ်ချို့လောက်ကိုသာ ကိုယ်တိုင်သွင်းရင်သွင်းရမှာပါ။
+
+== Shell
+Shell ဆို တာကတော့ User Software နဲ့ System Software နှစ်ခုကြားမှရှိတဲ့ကောင်လို့ပြောလို့ရပါမယ်။ ဥပမာပြောရရင်
+Bios လိုပါပဲ။ သူက Os ကို User တွေသုံးလို့ရအောင် CLI (Command Line Interface) တို့လိုမျိုးနဲ့ program run
+တာတွေ program တွေကို Script လုပ်ပြီး run တာတွေဒီလိုမျိုးတွေကို လုပ်ဆောင်ပေးပါတယ်။ သူက User Software တစ်ခုပါပဲ
+ဒါပေမဲ့ သူက တစ်ခြား User Software တွေကို Os နဲ့ ချိတ်ဆက်ပြီး အလုပ်လုပ်ပေးဖို့ Layer သဘောမျိုးထားပေးထားတာပါ။
+အဲ့ဒီအတွက် သူမှာ I/O pipeline တွေ Program run တာတွေ File Manage လုပ်တာတွေအတွက် Build-In Command
+တွေပါပါတယ်။ အခုခေတ် Modern Shell တွေမှာ ဆိုရင် သူတို့နဲ့ ချိတ်ဆက်ဖို့ Customize လုပ်ဖို့ plugin တွေပါထည့်လို့ရတဲ့အပြင်
+Scripting Language အနေနဲ့ပါသုံးလို့ရပါတယ်။ Scripting နဲ့ Programming Language ကွာတာက
+Programming က သူ့ရဲ့ Library တွေကိုသုံးပေမဲ့ Scripting က တစ်ခြား Program တွေကို Library
+သဘောမျိုးသုံးပါတယ်။ Shell တွေအများကြီး ရှိပါတယ်။ Linux နဲ့ Mac တို့လို Unix base Os တွေမှာဆိုရင် Bash Shell
+ကို Default အနေနဲ့ ပါလာတတ်ပါတယ်။ Windows မှာ ဆို Poweshell တို့ Ms-Dos တို့ရှိပါတယ်။ ဒါ့အပြင် Linux တို့လို
+unix base တွေအတွက် nushell, zsh, fish ဆိုပြီး အများကြီးရှိပါသေးတယ်။
+
+#pagebreak()
+
+#align(center, [= User Software များအကြောင်း])
+
+== မိတ်ဆက်
+User Software ဆိုတာကတော့ ကျွန်တော်တို့ နေ့စဥ်သုံးနေတဲ့ Facebook တို့ Discord တို့လို Software တွေကို ပြောတာပါ။ ဒီထဲက
+အများစုက Os ကို ထိန်ချုပ်ပေးတာ Os ကပေးတဲ့ Api တွေကို Programming Language သုံးပြီး ရေးထားတဲ့ Program
+တွေပါပါတယ်။ `Hello World` Program လေးကစလို့ Telegram တို့ Youtube တွေထိ အပါအဝင် User Software
+တွေ Billion နဲ့ ချီပြီး ရှိပါတယ်။ ဒီထဲမှာ Facebook တို့လို Youtube တို့လိုကောင်တွေပါမှာမှန်း အများစုသိကြပါတယ်။ ဒါပေမဲ့
+အများစုမသိတဲ့ Os ကို ထိန်းချုပ်ပေးတဲ့ Os က Api တွေကို သုံးပြီး တစ်ခြား User Software တွေပိုပြီး လွယ်လွယ်ကူကူသုံးရအောင်
+ထပ်ပြီး Api ထုတ်ပေးတဲ့ System Level User Software တွေကိုပဲ ပြောပေးသွားပါမယ်။
+
+== Display Server
+ကျွန်တော်တို့ သာမာန် computer သုံးတဲ့ သူတွေ computer ဖွင့်လိုက်ရင် ကျွန်တော်တို့ Mouse တွေကိုင်ပြီး သုံးလို့ရမဲ့ Firefox တို့လို
+Application Window တွေပေါ်လာဖို့အတွက် Graphical User Interface လို့ခေါ်တဲ့ GUI ကိုတွေ့ရမှာပါ။ ဒါပေမဲ့ သူက
+ရိုးရှင်းမနေပါဘူး ကျွန်တော်တို့ Gui တွေမပေါ်ခင် Cli ဆိုတဲ့ Command Line Interface လို့ခေါ်တဲ့ Shell Command တွေ
+သုံးလို့ပဲရခဲ့တာပါ သူ့မှာ ဘာ Graphic မှမပါပါဘူး။ ဒါပေမဲ့ နောက်ပိုင်းမှာတော့ Display Server တွေပေါ်လာပါတယ်။
+သူတို့က ဘာလုပ်ပေးတာလဲဆိုတော့ ဒီ Computer Screen တို့ Monitor, Keyboard နဲ့ Mouse တို့လို ကောင်တွေရဲ့ အပြောင်းအလဲကို
+ယူပြီး ဘာတွေပြောင်းလဲသွားတယ် Mouse ဆိုရင်လဲ User ကဘယ် position မှာ ဘာလုပ်လိုက်တယ် ဆိုတာကို Program လုပ်ပြီး
+လုပ်ချင်တာလုပ်ဖို့ Api ပြန်ထုတ်ပေးရတဲ့ကောင်တွေပါ အဲ့ဒီ Api တွေကို Programming Language တစ်ခုနဲ့သုံးပြီး Window
+Manager လို့ခေါ်တဲ့ ကျွန်တော်တို့ လက်ရှိသုံးနေတဲ့ GUI ကြီး ကို ဖြစ်လာအောင် ထောက်ပံ့ပေးရပါတယ်။ သူ့မှာဆိုရင် Xorg တို့ Wayland
+တို့ဆိုပြီးအမျိုးမျိုးရှိပါတယ်။ Windows မှာဆိုရင်တော့ WDDM (Windows Display Driver Model) ကိုသုံးပါတယ်။
+
+== Window Manager and Desktop Environment
+စောနကပြောခဲ့သလိုပါပဲ Window Manager ဆိုတာ Display Server က ပြန်ထုတ်ပေးတဲ့ Api တွေကို သုံးပြီး Developer
+စိတ်တိုင်းကျ Developer ကြိုက်တဲ့ Design philosophy အတိုင်း တစ်ခြား User Software တွေရဲ့ window တွေကို
+Keyboard နဲ့ Mouse ကဖြစ်သွားတဲ့ Event တွေအတိုင်း handle လုပ်ပေးရတာပါ။ ဥပမာဆိုရင် Application
+Window အသေးအကျယ် ချုံ့ချဲ့ လုပ်တာတို့ Layout Style ချိန်းတာတို့ စာရိုက်တာတို့ နဲ့တစ်ခြားဟာတွေအများကြီးပါ။ သူတို့တွေက လည်း
+အများကြီးရှိပါတယ်။ Kde မှာဆို Kwin, Xfce ရဲ့ Xfwm, Xorg မှာဆိုရင် i3, bspwm, dwm နဲ့ Wayland အတွက်ဆို
+Hyprland တို့ river တို့လို မျို'အများကြီး ရှိပါတယ်။ window manager တွေက ပေါ့ပါးတယ်။ Customizable
+အရမ်းဖြစ်တာကြောင့် #link("https://reddit.com/r/unixporn")[Linux Customization] အတွက်
+နာမည်ကြီးပါတယ်။ Desktop Environment ဆိုတာကတော့ Window Manager ကိုမှ additional User
+Software တွေတွဲပြီးပါတာကိုပြောတာပါ။ ဥပမာဆိုရင် Window Manager မှာ Setting App တို့ ဘာတို့မပါပါဘူး။
+ကိုယ်တိုင် Config File ထဲကနေ ဝင်ပြင်တာတို့လိုမျိုးလုပ်ရပါတယ်။ ဒါပေမဲ့ Desktop Environment မှာကျ
+အဲ့လိုမျိုးတွေတစ်ခါတည်းပါတဲ့အပြင် Movie ကြည့်တဲ့ App သီချင်းနားထောင်တဲ့ App ဒါတွေအကုန် ပါလာပါတယ်။ အဲ့ဒီအတွက်ကြောင့် သာမာန်
+user တွေအတွက်ကောင်းပေမဲ့၊ စက်သိပ့်မကောင်းတဲ့သူတွေ အရမ်းများတာမလိုချင်ပဲ minimal ပဲကြိုက် တဲ့သူတွေအတွက်ကျ မလိုတာတွေအများကြီး
+ပါတဲ့အတွက် အရမ်း bloat ဖြစ်ပါတယ်။၊ Desktop Environment တွေလည်း အများကြီး ရှိပါတယ်။ Kde တို့ Gnome တို့
+Xfce တို့လိုပါ။
