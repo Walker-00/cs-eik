@@ -394,11 +394,15 @@ Xfce တို့လိုပါ။ Simple ဖြစ်တဲ့ Window Manager 
 
 === Ipv4 နဲ့ Ipv6
 
+#pagebreak()
+
 == Multi Media
 
 === Computer ရဲ့ Multi Media ဆိုတာဘာပြောတာလဲ
 
 === Media File တွေဘယ်လိုအလုပ်လုပ်သလဲ
+
+#pagebreak()
 
 == နည်းပညာပိုင်းဆိုင်ရာ ကိုယ်ရေးအချက်အလက်တေွ နဲ့ နည်းပညာ လုံခြုံရေးအကြောင်း
 
