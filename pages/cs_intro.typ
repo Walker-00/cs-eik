@@ -412,6 +412,26 @@ Xfce တို့လိုပါ။ Simple ဖြစ်တဲ့ Window Manager 
 
 #pagebreak()
 
+#align([= Computer တွေကို ကိုယ်လိုရာ ခိုင်းစေချင်း (Programming)])
+
+== Programming ဆိုတာဘာလဲ
+
+== Programming Language တွေကဘာတွေလဲ
+
+== Programming Language အမျိုးအစားတွေနဲ့အကြံပေးချက်များ
+
+#pagebreak()
+
+== Python Programming
+#link("https://www.youtube.com/watch?v=rfscVS0vtbw")[Python Programming လေ့လာဖို့အတွက် Resource လေးပါ]
+
+== C Programming
+#link("https://youtube.com/playlist?list=PLBlnK6fEyqRhX6r2uhhlubuF5QextdCSM&si=dqSfUNwiJGSv7b6E")[C Programming လေ့လာဖို့ Resource လေးပါ]
+
+== Rust Programming
+#link("https://drive.google.com/drive/folders/1I-w-_-UaXi3fESfANAxU0MG-mwdnyl50?usp=drive_link")[ဒါကတော့ ကျွန်တော့ရဲ့ မြန်မာလို Rust Course လေးပါ]
+#pagebreak()
+
 #align(center, [= စာအုပ်လေး ပိုပြည့်စုံအောင် ဖြည့်စည်းပေးကြတဲ့ Contributors များ])
 \
 \
